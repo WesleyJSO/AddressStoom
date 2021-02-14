@@ -134,7 +134,7 @@ public class AddressController {
 			Address address = new Address(addressDTO);
 			address.setId(id);
 			address = repository.save(address);
-			return created(getURI(id)).body("Endereço atualizado com sucesso");
+			return ok("Endereço atualizado com sucesso");
 		} catch(Exception e) {
 			return status(INTERNAL_SERVER_ERROR).body(e.getMessage());
 		}
